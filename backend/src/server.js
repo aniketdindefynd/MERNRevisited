@@ -31,7 +31,7 @@ app.use(rateLimiter);
 import notesRouter from "./routes/notes.routes.js"
 app.use("/api/notes", notesRouter);
 
-//prod setup
+//prod setup serving frontend as static assets
 if(process.env.NODE_ENV === "production") {
     app.use(express.static(path.join(__dirname, "../frontend", "dist"))) // serving as static assets
 
